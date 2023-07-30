@@ -1,0 +1,123 @@
+Part1. 변수
+1, 원시변수
+원시변수 : 할당된 데이터의 실제값이 저장되는 변수
+int = 0 ;
+
+2. 참조변수
+할당된 데이터의 주소값이 저장되는 변수
+String은 참조변수
+String name = "John";
+위 코드에서 name은 String 타입의 참조 변수입니다. "John"이라는 문자열 데이터는 문자열 풀(String Pool)이라고 불리는 메모리 영역에 저장되고, 
+name 변수는 해당 문자열 데이터를 가리키는 주소를 갖게 됩니다.
+
+3. 배열
+같은 타입의 변수들로 이루어진 집합
+int a[] = new int[10];
+4. Integer vs int
+integer : int의 wrapper class로 기본자료타입을 객체로 다루기위해 사용 ex)Integer.parseInt()
+int : 정수형 변수의 타입
+
+Part2. 연산자
+1. 연산자종류
+대입연산자(=),비교연산자(<,>,==,!=,<=,>=),논리연산자(true,false,||,&&),산술연산자(+,*,-,/..)
+
+2. 연산자 우선순위
+괄호 > 산술 > 비교 > 논리 > 대입
+Part3. 명령문
+
+1. 조건문(if)
+참과 거짓을 판단하는 문장으로 조건에 따라 진행되는 부분이 다름
+if(a > 20){
+      break;
+}
+2. 반복문(for,while)
+코드가 중복되는 부분을 반복문을 사용해 코드의 반복을 줄여주는 역할을 한다
+for(int i = 0 ; i < 10 ; i++){
+
+3. for문과 while문의 차이
+for : 초기값과 조건식 증감연산으로 이루어져있으며 동작을 실행 ,조건식으로 true false 판단
+for(int i = 0 ; i < 10 ; i++){
+while: 조건식이 false가 될때까지 진행 ,조건식이 필수적임
+while(true){ / while(cnt-- <= 0){
+Part4. OOP
+1. 객체지향언어 특징 4가지
+다형성/추상화/상속/캡슐화
+다형성 : 같은이름의 메소드를 호출하더라도 객체에 따라 다르게 동작 (메소드 오버라이딩 ,메소드 오버로딩)하기때문에 코드의 재사용성이 높아짐
+
+캡슐화 : 클래스안의 연관된 속성과 기능들을 하나의 캡슐로 만들어 데이터를 외부로부터 보호함(싱글톤)
+
+추상화 : 각 클래스의 공통적인 부분을 뽑아 상위클래스화 시키는것(상위가아니라 하위도 가능)
+public interface abc{
+	public int abcde(int a);
+}
+상속 : 부모클래스의 기능을 자식클래스에게 상속받아 자식클래스에서도 사용할 수 있는것
+public class Vihicle {
+	protected int speed = 3;
+	
+	public int getSpeed(){
+		return speed;
+	}
+}
+
+public class car extends Vehicle{
+	public void printspd(){
+		System.out.println(speed);
+	}
+}
+결과 : 3
+
+public class abcd implements abc{  //다중상속을 지원하지않는 대신 implements 사용, 반드시 재정의 필요
+	public int abcde(int a){
+		int b = a + 1;
+		return b;
+	}
+}
+
+
+2. 객체란 무엇인가?
+객체(Object)란 물리적으로 존재하거나 추상적으로 생각할 수 있는 것 중에서 자신의 속성을 가지고 있고 다른것과 식별 가능한 것을 말합니다.
+객체는 속성과 동작으로 구성되어 있다고 보면 되는데 자바에서는 이 속성과 동작을 각각 필드(field) 와 메소드(method) 라 부릅니다.
+
+3. 객체를 초등학교 수준으로 설명하시오
+클래스 == 붕어빵 틀
+붕어빵
+
+4. 다형성이란 무엇인가?
+-메소드 오버라이딩 ,메소드 오버로딩
+메소드 오버로딩 : 같은이름의 메소드를 매개변수에 따라 다르게 동작하게 하는것
+public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+메소드 오버라이드 : 
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+5. 상속과 인터페이스를 설명
+
+6, 추상클래스가 무엇인가?
+7. 싱글톤
+Part5. 자료구조
+1. Collection
+2. stack
+3. queue
+Part6. 기타 중요한 이론
+1. JVM(자바의 메모리 영역), 가비지컬렉터
+2. static, final
+3. 오버라이딩(Overriding)과 오버로딩(Overloading)
+4. String, StringBuffer, StringBuilder° ≥70)
+5.접근제어자
+6. error, Exception*to|
