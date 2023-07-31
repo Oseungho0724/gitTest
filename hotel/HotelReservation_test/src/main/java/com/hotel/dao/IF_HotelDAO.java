@@ -18,4 +18,5 @@ public interface IF_HotelDAO {
 	public void delete_hotel(String detailAddr_hotel) throws Exception;
 	public List<hotelVO> hotel_selectBigAddr(String bigAddr_hotel) throws Exception;
 	public void test();
+	public void test1();
 }
