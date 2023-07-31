@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 호텔 데이터베이스 매퍼 -->
+<mapper namespace="com.hotel.dao.IF_HotelDAO">
+	<insert id="join_hotel_save" parameterType="com.hotel.VO.hotelVO">
+		insert into hoteltbl values(#{bigAddr_hotel},#{detailAddr_hotel},#{name_hotel},
+		#{id_hotel},#{img_hotel},#{park_hotel},#{category_hotel},#{checkIn_hotel},#{checkOut_hotel})
+	</insert>
+	<select id="hotel_selectAll" parameterType="String" resultType="com.hotel.VO.hotelVO">
+		select * from hoteltbl
+		<where>
+		<if test="value != null">
+			category_hotel = #{value}
+		</if>
+		</where>
+	</select>
+	
+	<select id="hotel_selectBigAddr" parameterType="String" resultType="com.hotel.VO.hotelVO">
+		select * from hoteltbl where bigAddr_hotel = #{bigAddr_hotel}
+	</select>
+	
+	<select id="hotel_selectDetailAddr" parameterType="String" resultType="com.hotel.VO.hotelVO">
+		select * from hoteltbl where detailAddr_hotel = #{detailAddr_hotel}
+	</select>
+	<select id="hotel_selectCategory" resultType="String">
+		select category_hotel from hoteltbl group by category_hotel
+	</select>
+	
+	<select id="search_hotel" parameterType="hashmap" resultType="com.hotel.VO.hotelVO">
+		select * from hoteltbl where category_hotel = #{search_category} and name_hotel like '%${search_name}%'
+	</select>
+	
+	<select id="hotel_select_my" parameterType="String" resultType="com.hotel.VO.hotelVO">
+		select * from hoteltbl where id_hotel = #{id_user}
+	</select>
+	<update id="update_hotel_save" parameterType="com.hotel.VO.hotelVO">
+		update hoteltbl set name_hotel=#{name_hotel}, park_hotel=#{park_hotel}, category_hotel=#{category_hotel}
+		<if test="img_hotel != ''">
+			, img_hotel=#{img_hotel}
+		</if>
+		where detailAddr_hotel = #{detailAddr_hotel}
+	</update>
+	<delete id="delete_hotel" parameterType="String">
+		delete from hoteltbl where detailAddr_hotel = #{detailAddr_hotel}
+	</delete>
+	
+</mapper>
