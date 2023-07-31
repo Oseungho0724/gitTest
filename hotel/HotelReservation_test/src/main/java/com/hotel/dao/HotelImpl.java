@@ -71,4 +71,10 @@ public class HotelImpl implements IF_HotelDAO{
 		return sqlSession.selectList(mapperQuery+".hotel_selectBigAddr",bigAddr_hotel);
 	}
 
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'test'");
+	}
+
 }
