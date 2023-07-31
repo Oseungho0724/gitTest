@@ -19,4 +19,7 @@ public interface IF_HotelDAO {
 	public List<hotelVO> hotel_selectBigAddr(String bigAddr_hotel) throws Exception;
 	public void test();
 	public void test1();
+	public void test4();
+	public void test2();
+	public void testggonsi();
 }
